@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #211b2c;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,11 +28,12 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.editor {
+  width: 95vw;
+  min-height: 95vh;
+  background-color: #211b2c;
+  color: white;
+  margin: 1em;
+  border: none;
+  outline: none;
 }

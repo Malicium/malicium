@@ -1,12 +1,11 @@
-import './App.css';
+import './App.scss';
 
 function App() {
+  // todo: use redux form and modulize
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Write something.
-        </p>
+        <textarea className="editor" placeholder="Write something."/>
       </header>
     </div>
   );
