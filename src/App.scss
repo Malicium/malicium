@@ -7,6 +7,8 @@
   pointer-events: none;
 }
 
+$bg-color: #211b2c;
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #211b2c;
+  background-color: $bg-color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,7 +33,7 @@
 .editor {
   width: 95vw;
   min-height: 95vh;
-  background-color: #211b2c;
+  background-color: $bg-color;
   color: white;
   margin: 1em;
   border: none;
