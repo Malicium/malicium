@@ -1,10 +1,11 @@
 $bg-color: #202124;
 .App {
-  text-align: center;
+  width: 90%;
+  height: 100%;
+  margin: auto;
 }
 
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
 }
 
@@ -14,6 +15,7 @@ $bg-color: #202124;
 }
 
 .App-header {
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,17 +29,20 @@ $bg-color: #202124;
 }
 
 .editor {
-  width: 95vw;
-  min-height: 95vh;
+  width: 100%;
+  min-height: max-content;
   background: $bg-color !important;
   color: #eee;
-  margin: 1em;
   border: none;
   outline: none;
 }
 
 .canvas {
   background: $bg-color !important;
-  width: 95vw !important;
+  width: 100% !important;
   height: 95vh !important;
+}
+
+.menu {
+  margin-bottom: 2em;
 }

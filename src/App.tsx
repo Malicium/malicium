@@ -2,8 +2,6 @@ import React from 'react'
 import CanvasDraw from 'react-canvas-draw'
 import './App.scss'
 
-
-
 class App extends React.Component {
   static defaultProps = {
     className: 'canvas',
@@ -32,20 +30,34 @@ class App extends React.Component {
     // zoomExtents: { min: 0.33, max: 3 },
   }
 
-  render() {
+  state = {
+    mode: 'typing'
+  }
+
+  switchMode () {
+    this.setState({ mode: this.state.mode === 'drawing' ? 'typing' : 'drawing' })
+  }
+
+  render () {
     return (
       <div className='App'>
         <header className='App-header' />
-        <CanvasDraw
-          {...App.defaultProps}
-        />
-        <textarea className='editor' placeholder='Write something.' />
+        <div className='menu'>
+          <input type='button' value={this.state.mode} onClick={this.switchMode.bind(this)} />
+        </div>
+
+        <div className='canvas-container' hidden={this.state.mode === 'typing'}>
+          <CanvasDraw
+            {...App.defaultProps}
+          />
+        </div>
+
+        <div className='editor-container' hidden={this.state.mode === 'drawing'}>
+          <textarea className='editor' placeholder='Write something.' />
+        </div>
       </div>
     )
   }
-  
 }
-
-
 
 export default App
