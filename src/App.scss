@@ -1,3 +1,4 @@
+$bg-color: #202124;
 .App {
   text-align: center;
 }
@@ -7,17 +8,12 @@
   pointer-events: none;
 }
 
-$bg-color: #211b2c;
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
   }
 }
 
 .App-header {
-  background-color: $bg-color;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,9 +29,15 @@ $bg-color: #211b2c;
 .editor {
   width: 95vw;
   min-height: 95vh;
-  background-color: $bg-color;
-  color: white;
+  background: $bg-color !important;
+  color: #eee;
   margin: 1em;
   border: none;
   outline: none;
+}
+
+.canvas {
+  background: $bg-color !important;
+  width: 95vw !important;
+  height: 95vh !important;
 }
