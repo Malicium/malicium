@@ -7,51 +7,55 @@ $bg-color: #202124;
   background: url("../public/assets/note-pad.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
+  background-position: center;
 
-.App-logo {
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+    }
   }
-}
 
-.App-header {
-  min-height: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-}
-
-.editor-container {
-  width: 35%;
-  height: 70%;
-  margin: auto;
-  padding: 2em;
-
-  .editor {
-    width: 100%;
-    height: 100%;
-    background: none;
-    border: none;
-    outline: none;
-    color: $bg-color;
+  
+  .App-header {
+    min-height: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
   }
-}
+  
+  .App-link {
+  }
+  
+  .editor-container {
+    width: 40%;
+    height: 75%;
+    margin: auto;
+    padding: 1em;
+  
+    .editor {
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      color: $bg-color;
+      font-size: 1rem;
+    }
 
-.canvas {
-  background: $bg-color !important;
-  width: 100% !important;
-  height: 95vh !important;
-}
-
-.menu {
-  margin-bottom: 2em;
+    @media screen and(max-width: 1080px) {
+      width: 70%;
+    }
+  }
+  
+  .canvas {
+    background: $bg-color !important;
+    width: 100% !important;
+    height: 95vh !important;
+  }
+  
+  .menu {
+    margin-bottom: 2em;
+  }
 }
