@@ -9,7 +9,7 @@ class App extends React.Component {
     loadTimeOffset: 5,
     lazyRadius: 10,
     brushRadius: 1,
-    brushColor: '#eee',
+    // brushColor: '#eee',
     catenaryColor: '#aaa',
     gridColor: 'rgba(150,150,150,0.17)',
     hideGrid: true
