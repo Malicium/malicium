@@ -1,41 +1,42 @@
+$bg-color: #202124;
 .App {
-  text-align: center;
-}
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  background: url("../public/assets/note-pad.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-$bg-color: #211b2c;
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .editor-container, .canvas-container, .canvas {
+    width: 40%;
+    height: 85%;
+    margin: auto;
+    @media screen and(max-width: 840px) {
+      width: 75%;
+    }
+    // border: 1px solid #000;
   }
-}
 
-.App-header {
-  background-color: $bg-color;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.editor {
-  width: 95vw;
-  min-height: 95vh;
-  background-color: $bg-color;
-  color: white;
-  margin: 1em;
-  border: none;
-  outline: none;
+  
+  .editor {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: $bg-color;
+    font-size: 1rem;
+  }
+  
+  .canvas {
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+  }
+  
+  .menu {
+    margin-bottom: 4em;
+  }
 }
