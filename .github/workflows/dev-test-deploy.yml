@@ -6,19 +6,13 @@ name: Test Dev
 on:
   push:
     branches: [ dev ]
-  pull_request:
-    branches: [ dev ]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -29,3 +23,11 @@ jobs:
     - run: npm ci  # runs a clean npm install, removing any node_modules first
     - run: npm run build
     - run: npm test -- --passWithNoTests
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build and merge to gh-pages
+      run: npm deploy
+
