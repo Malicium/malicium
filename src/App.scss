@@ -1,24 +1,51 @@
 $bg-color: #202124;
+$width-sm: 780px;
+$width-md: 1024px;
+$width-lg: 1140px;
+$width-xlg: 1366px;
+
+
 .App {
   width: 100vw;
   height: 100vh;
   margin: auto;
-
-  background: url("../public/assets/note-pad.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  
+  background: url("../public/assets/note-pad-vt.jpg") no-repeat;
+  background-size: contain;
   background-position: center;
 
+  @media screen and(max-width: $width-lg) {
+    background-size: cover;
+  }
+
+  @media screen and(max-width: $width-md) {
+    background: url("../public/assets/note-pad.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media screen and(max-width: $width-sm) {
+    background-size: auto;
+  }
+
   .editor-container, .canvas-container, .canvas {
-    width: 40%;
-    height: 85%;
+    width: 80%;
+    height: 80%;
     margin: auto;
-    @media screen and(max-width: 840px) {
+
+    @media screen and(min-width: $width-lg) {
+      width: 50%;
+      height: 70%;
+    }
+    @media screen and(max-width: $width-md) {
       width: 75%;
+    }
+    @media screen and(max-width: $width-sm) {
+      width: 90%;
+      height: 90%;
     }
     // border: 1px solid #000;
   }
-
   
   .editor {
     width: 100%;
@@ -28,6 +55,11 @@ $bg-color: #202124;
     outline: none;
     color: $bg-color;
     font-size: 1rem;
+
+    &::placeholder {
+      color: $bg-color;
+      opacity: 0.5;
+    }
   }
   
   .canvas {
@@ -38,5 +70,15 @@ $bg-color: #202124;
   
   .menu {
     margin-bottom: 4em;
+    @media screen and(max-width: $width-sm) {
+      margin-bottom: 0;
+    }
+    @media screen and(min-width: $width-lg) {
+      margin-bottom: 6em;
+    }
+    @media screen and(min-width: $width-xlg) {
+      margin-bottom: 10em;
+    }
+
   }
 }
