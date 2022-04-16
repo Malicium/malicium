@@ -1,6 +1,7 @@
 {
   "name": "malicium",
   "version": "0.1.0",
+  "homepage": "https://malicium.github.io/malicium",
   "private": true,
   "dependencies": {
     "@types/node": "^16.11.26",
@@ -20,7 +21,9 @@
     "start": "react-scripts start",
     "build": "ts-standard --fix && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "canvas": "^2.9.1"
+    "canvas": "^2.9.1",
+    "gh-pages": "^3.2.3"
   }
 }
