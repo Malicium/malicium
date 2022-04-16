@@ -12,7 +12,7 @@ class App extends React.Component {
     // brushColor: '#eee',
     catenaryColor: '#aaa',
     gridColor: 'rgba(150,150,150,0.17)',
-    hideGrid: true,
+    hideGrid: true
     // canvasWidth: 400,
     // canvasHeight: 400,
     // disabled: false,
@@ -34,11 +34,11 @@ class App extends React.Component {
     mode: 'typing'
   }
 
-  switchMode () {
+  switchMode (): void {
     this.setState({ mode: this.state.mode === 'drawing' ? 'typing' : 'drawing' })
   }
 
-  render () {
+  render (): JSX.Element {
     return (
       <div className='App'>
         <div className='menu'>
