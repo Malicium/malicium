@@ -13,6 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        ref: 'dev'
+    - name: Use Node.js 14.19.1 (LTS 14) 
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14.19.1
+        cache: 'npm'
     - name: Cache node_modules
       uses: actions/cache@v3
       env:
@@ -24,5 +31,5 @@ jobs:
     - name: Install node modules if not cached
       run: npm install
     - name: Build and merge to gh-pages
-      run: npm run deploy
+      run: npm run deploy-gh-pages
 
