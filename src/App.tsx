@@ -11,18 +11,18 @@ class App extends React.Component {
     brushRadius: 1,
     catenaryColor: '#aaa',
     gridColor: 'rgba(150,150,150,0.17)',
-    hideGrid: true,
+    hideGrid: true
   }
 
   state = {
     mode: 'typing'
   }
 
-  switchMode () {
+  switchMode (): void {
     this.setState({ mode: this.state.mode === 'drawing' ? 'typing' : 'drawing' })
   }
 
-  render () {
+  render (): JSX.Element {
     return (
       <div className='App'>
         <div className='menu'>
