@@ -4,6 +4,8 @@
 name: Deploy Dev
 
 on:
+  workflow_dispatch:
+    ref: 'refs/head/dev'
   workflow_run:
     workflows: [Test Dev]
     types: [completed]
