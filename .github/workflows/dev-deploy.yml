@@ -42,5 +42,5 @@ jobs:
     - name: Build and merge to gh-pages
       env:
         NODE_DEBUG: gh-pages
-      run: pm run deploy
+      run: npm run deploy
 
