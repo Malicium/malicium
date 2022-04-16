@@ -24,5 +24,5 @@ jobs:
     - name: Install node modules if not cached
       run: npm install
     - name: Build and merge to gh-pages
-      run: npm run deploy
+      run: npm run deploy -- -b dev
 
