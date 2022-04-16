@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        ref: 'dev'
     - name: Use Node.js 14.19.1 (LTS 14) 
       uses: actions/setup-node@v3
       with:
