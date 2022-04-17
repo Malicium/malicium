@@ -6,16 +6,16 @@ class App extends React.Component {
   static defaultProps = {
     className: 'canvas',
     onChange: null,
-    loadTimeOffset: 5,
-    lazyRadius: 10,
-    brushRadius: 1,
+    loadTimeOffset: 1,
+    lazyRadius: 0,
+    brushRadius: 0,
     catenaryColor: '#aaa',
     gridColor: 'rgba(150,150,150,0.17)',
     hideGrid: true
   }
 
   state = {
-    mode: 'typing'
+    mode: 'drawing'
   }
 
   switchMode (): void {
