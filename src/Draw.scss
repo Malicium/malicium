@@ -25,47 +25,51 @@
 }
 
 .canvas {
-  background: transparent !important;
-  margin: auto;
-}
-
-.editor, .canvas {
-  width: 65% !important;
-  height: 80% !important;
-  margin-top: 3em;
-
-  @media screen and(min-width: index.$width-xlg) {
-    margin-top: 9em;
-    width: 48% !important;
-    height: 70% !important;
-  }
-
-  @media screen and(max-width: index.$width-lg) {
-    margin-top: 8em;
-    width: 70% !important;
-    height: 65% !important;
-  }
-
-  @media screen and(max-width: index.$width-md) {
-    height: 75% !important;
-  }
-
-  @media screen and(max-width: index.$width-sm) {
-    margin-top: 7em;
-    width: 90% !important;
-    height: 65% !important;
-  }
-
+  width: 100% !important;
+  height: 100% !important;
   // border: 1px dotted #000;
 }
 
-.canvas-tools {
+// .editor, .canvas {
+//   width: 65% !important;
+//   height: 80% !important;
+//   margin-top: 3em;
+
+//   @media screen and(min-width: index.$width-xlg) {
+//     margin-top: 9em;
+//     width: 48% !important;
+//     height: 70% !important;
+//   }
+
+//   @media screen and(max-width: index.$width-lg) {
+//     margin-top: 8em;
+//     width: 70% !important;
+//     height: 65% !important;
+//   }
+
+//   @media screen and(max-width: index.$width-md) {
+//     height: 75% !important;
+//   }
+
+//   @media screen and(max-width: index.$width-sm) {
+//     margin-top: 7em;
+//     width: 90% !important;
+//     height: 65% !important;
+//   }
+
+//   // border: 1px dotted #000;
+// }
+
+.canvas-toolbar {
+  border: 1px dotted #000;
   background-color: #eee;
   opacity: 0.5;
   height: 60px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   list-style: none;
+  margin: 0;
+  padding: 0;
 
   .button {
     width: 40px;
