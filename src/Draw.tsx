@@ -106,7 +106,9 @@ export default function Draw (): JSX.Element {
       <CanvasDraw
         {...defaultProps}
       />
-      <a ref={urlRef} href={dataUrl} download='malicium-drawing.png' />
+      <a ref={urlRef} href={dataUrl} download='malicium-drawing.png'>
+      <i aria-hidden="true"/>
+      </a>
     </div>
   )
 }
