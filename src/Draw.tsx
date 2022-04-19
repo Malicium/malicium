@@ -7,9 +7,13 @@ export default function Draw (): JSX.Element {
   const urlRef = useRef(null)
   const [dataUrl, saveData] = useState('')
   const [toolbarVisible, showToolbar] = useState(false)
+  const [brushColor, setBrushColor] = useState('#444')
+  const [brushRadius, setBrushRadius] = useState(0.5)
+  const [brushStyle, setBrushStyle] = useState('none')
 
   const draw = (): void => {
     console.log('drawing')
+    setDrawStyle()
     console.log(canvasRef)
   }
 
@@ -20,7 +24,15 @@ export default function Draw (): JSX.Element {
 
   const erase = (): void => {
     console.log('erasing')
-    canvasRef.current.eraseAll()
+    setEraserStyle()
+  }
+
+  const refresh = (): void => {
+    console.log('clearing all')
+    if (window.confirm('Are you sure?')) {
+      canvasRef.current.eraseAll()
+      setDrawStyle()
+    }
   }
 
   const save = (): void => {
@@ -35,29 +47,43 @@ export default function Draw (): JSX.Element {
     urlRef.current.click()
   }
 
-  const hover = (): void => {
+  const setDrawStyle = (): void => {
+    setBrushColor('#444')
+    setBrushRadius(0.5)
+    setBrushStyle('none')
+  }
+
+  const setEraserStyle = (): void => {
+    setBrushColor('#fff')
+    setBrushRadius(10)
+    setBrushStyle('grab')
+  }
+
+  const mouseHover = (): void => {
     showToolbar(true)
   }
 
-  const away = (): void => {
+  const mouseAway = (): void => {
     showToolbar(false)
   }
 
-  const toolbarOpacity = toolbarVisible ? 0.6 : 0
+  const toolbarOpacity = toolbarVisible ? 0.5 : 0
   const defaultProps = {
     className: 'canvas',
     ref: canvasRef,
     backgroundColor: 'transparent',
     loadTimeOffset: 1,
     lazyRadius: 0,
-    brushRadius: 0,
+    brushRadius: brushRadius,
+    brushColor: brushColor,
     catenaryColor: '#aaa',
-    hideGrid: true
+    hideGrid: true,
+    style: {cursor: brushStyle}
   }
-  console.log(toolbarVisible)
+
   return (
     <div className='canvas-container'>
-      <ul className='canvas-toolbar' onMouseEnter={hover} onMouseLeave={away} style={{ opacity: toolbarOpacity }}>
+      <ul className='canvas-toolbar' onMouseEnter={mouseHover} onMouseLeave={mouseAway} style={{ opacity: toolbarOpacity }}>
         <li className='button'>
           <img src='./assets/icon-pencil.png' onClick={draw} alt='draw' />
         </li>
@@ -66,6 +92,9 @@ export default function Draw (): JSX.Element {
         </li>
         <li className='button'>
           <img src='./assets/icon-back.png' onClick={undo} alt='undo' />
+        </li>
+        <li className='button'>
+          <img src='./assets/icon-refresh.png' onClick={refresh} alt='refresh' />
         </li>
         <li className='button'>
           <img src='./assets/icon-save.png' onClick={save} alt='save' />
@@ -77,7 +106,9 @@ export default function Draw (): JSX.Element {
       <CanvasDraw
         {...defaultProps}
       />
-      <a ref={urlRef} href={dataUrl} download='drawing.png' />
+      <a ref={urlRef} href={dataUrl} download='malicium-drawing.png'>
+      <i aria-hidden="true"/>
+      </a>
     </div>
   )
 }
