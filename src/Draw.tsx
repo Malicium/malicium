@@ -43,7 +43,7 @@ export default function Draw (): JSX.Element {
     showToolbar(false)
   }
 
-  const toolbarOpacity = toolbarVisible ? 0.6 : 0
+  const toolbarOpacity = toolbarVisible ? 0.5 : 0
   const defaultProps = {
     className: 'canvas',
     ref: canvasRef,
