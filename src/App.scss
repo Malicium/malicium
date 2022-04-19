@@ -1,9 +1,4 @@
-$bg-color: #202124;
-$width-sm: 780px;
-$width-md: 1024px;
-$width-lg: 1140px;
-$width-xlg: 1366px;
-
+@use 'index';
 
 .App {
   width: 100vw;
@@ -14,77 +9,13 @@ $width-xlg: 1366px;
   background-size: cover;
   background-position: center;
 
-  @media screen and(max-width: $width-md) {
+  @media screen and(max-width: index.$width-md) {
     background: url("../public/assets/note-pad-vt.jpg") no-repeat;
     background-size: cover;
     background-position: center;
   }
 
-  @media screen and(min-width: $width-xlg) {
+  @media screen and(min-width: index.$width-xlg) {
     background-size: contain;
-  }
-
-  .editor-container, .canvas-container {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-  
-  .editor {
-    background: none;
-    border: none;
-    outline: none;
-    color: $bg-color;
-    font-size: 1rem;
-
-    &::placeholder {
-      color: $bg-color;
-      opacity: 0.5;
-    }
-
-    @media screen and(min-width: $width-xlg) {
-      margin-top: 10em;
-    }
-  }
-  
-  .canvas {
-    background: transparent !important;
-    margin: auto;
-  }
-
-  .editor, .canvas {
-    width: 65% !important;
-    height: 80% !important;
-    margin-top: 3em;
-
-    @media screen and(min-width: $width-xlg) {
-      margin-top: 9em;
-      width: 48% !important;
-      height: 70% !important;
-    }
-
-    @media screen and(max-width: $width-lg) {
-      margin-top: 8em;
-      width: 70% !important;
-      height: 65% !important;
-    }
-
-    @media screen and(max-width: $width-md) {
-      height: 75% !important;
-    }
-
-    @media screen and(max-width: $width-sm) {
-      margin-top: 7em;
-      width: 90% !important;
-      height: 65% !important;
-    }
-
-    // border: 1px dotted #000;
-
-  }
-  
-  .menu {
-    
-
   }
 }
