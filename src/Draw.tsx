@@ -13,9 +13,7 @@ export default function Draw (): JSX.Element {
 
   const draw = (): void => {
     console.log('drawing')
-    setBrushColor('#444')
-    setBrushRadius(0.5)
-    setBrushStyle('none')
+    setDrawStyle()
     console.log(canvasRef)
   }
 
@@ -26,9 +24,15 @@ export default function Draw (): JSX.Element {
 
   const erase = (): void => {
     console.log('erasing')
-    setBrushColor('#fff')
-    setBrushRadius(10)
-    setBrushStyle('grab')
+    setEraserStyle()
+  }
+
+  const refresh = (): void => {
+    console.log('clearing all')
+    if (window.confirm('Are you sure?')) {
+      canvasRef.current.eraseAll()
+      setDrawStyle()
+    }
   }
 
   const save = (): void => {
@@ -43,11 +47,23 @@ export default function Draw (): JSX.Element {
     urlRef.current.click()
   }
 
-  const hover = (): void => {
+  const setDrawStyle = (): void => {
+    setBrushColor('#444')
+    setBrushRadius(0.5)
+    setBrushStyle('none')
+  }
+
+  const setEraserStyle = (): void => {
+    setBrushColor('#fff')
+    setBrushRadius(10)
+    setBrushStyle('grab')
+  }
+
+  const mouseHover = (): void => {
     showToolbar(true)
   }
 
-  const away = (): void => {
+  const mouseAway = (): void => {
     showToolbar(false)
   }
 
@@ -67,7 +83,7 @@ export default function Draw (): JSX.Element {
 
   return (
     <div className='canvas-container'>
-      <ul className='canvas-toolbar' onMouseEnter={hover} onMouseLeave={away} style={{ opacity: toolbarOpacity }}>
+      <ul className='canvas-toolbar' onMouseEnter={mouseHover} onMouseLeave={mouseAway} style={{ opacity: toolbarOpacity }}>
         <li className='button'>
           <img src='./assets/icon-pencil.png' onClick={draw} alt='draw' />
         </li>
@@ -76,6 +92,9 @@ export default function Draw (): JSX.Element {
         </li>
         <li className='button'>
           <img src='./assets/icon-back.png' onClick={undo} alt='undo' />
+        </li>
+        <li className='button'>
+          <img src='./assets/icon-refresh.png' onClick={refresh} alt='refresh' />
         </li>
         <li className='button'>
           <img src='./assets/icon-save.png' onClick={save} alt='save' />
