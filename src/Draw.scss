@@ -1,0 +1,81 @@
+@use 'index';
+
+
+.editor-container, .canvas-container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.editor {
+  background: none;
+  border: none;
+  outline: none;
+  color: index.$bg-color;
+  font-size: 1rem;
+
+  &::placeholder {
+    color: index.$bg-color;
+    opacity: 0.5;
+  }
+
+  @media screen and(min-width: index.$width-xlg) {
+    margin-top: 10em;
+  }
+}
+
+.canvas {
+  background: transparent !important;
+  margin: auto;
+}
+
+.editor, .canvas {
+  width: 65% !important;
+  height: 80% !important;
+  margin-top: 3em;
+
+  @media screen and(min-width: index.$width-xlg) {
+    margin-top: 9em;
+    width: 48% !important;
+    height: 70% !important;
+  }
+
+  @media screen and(max-width: index.$width-lg) {
+    margin-top: 8em;
+    width: 70% !important;
+    height: 65% !important;
+  }
+
+  @media screen and(max-width: index.$width-md) {
+    height: 75% !important;
+  }
+
+  @media screen and(max-width: index.$width-sm) {
+    margin-top: 7em;
+    width: 90% !important;
+    height: 65% !important;
+  }
+
+  // border: 1px dotted #000;
+}
+
+.canvas-tools {
+  background-color: #eee;
+  opacity: 0.5;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+
+  .button {
+    width: 40px;
+    &:hover {
+      background-color: #ccc;
+    }
+    padding: 10px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
