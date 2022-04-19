@@ -7,9 +7,15 @@ export default function Draw (): JSX.Element {
   const urlRef = useRef(null)
   const [dataUrl, saveData] = useState('')
   const [toolbarVisible, showToolbar] = useState(false)
+  const [brushColor, setBrushColor] = useState('#444')
+  const [brushRadius, setBrushRadius] = useState(0.5)
+  const [brushStyle, setBrushStyle] = useState('none')
 
   const draw = (): void => {
     console.log('drawing')
+    setBrushColor('#444')
+    setBrushRadius(0.5)
+    setBrushStyle('none')
     console.log(canvasRef)
   }
 
@@ -20,7 +26,9 @@ export default function Draw (): JSX.Element {
 
   const erase = (): void => {
     console.log('erasing')
-    canvasRef.current.eraseAll()
+    setBrushColor('#fff')
+    setBrushRadius(10)
+    setBrushStyle('grab')
   }
 
   const save = (): void => {
@@ -50,11 +58,13 @@ export default function Draw (): JSX.Element {
     backgroundColor: 'transparent',
     loadTimeOffset: 1,
     lazyRadius: 0,
-    brushRadius: 0,
+    brushRadius: brushRadius,
+    brushColor: brushColor,
     catenaryColor: '#aaa',
-    hideGrid: true
+    hideGrid: true,
+    style: {cursor: brushStyle}
   }
-  console.log(toolbarVisible)
+
   return (
     <div className='canvas-container'>
       <ul className='canvas-toolbar' onMouseEnter={hover} onMouseLeave={away} style={{ opacity: toolbarOpacity }}>
