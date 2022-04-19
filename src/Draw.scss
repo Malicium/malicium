@@ -27,6 +27,7 @@
 .canvas {
   width: 100% !important;
   height: 100% !important;
+  cursor: cell;
   // border: 1px dotted #000;
 }
 
@@ -73,6 +74,7 @@
 
   .button {
     width: 40px;
+    cursor: pointer;
     &:hover {
       background-color: #ccc;
     }

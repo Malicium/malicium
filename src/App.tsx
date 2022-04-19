@@ -1,7 +1,7 @@
 import './App.scss'
 import Draw from './Draw'
 
-export default function App() {
+export default function App (): JSX.Element {
   return (
     <div className='App'>
       <Draw />
