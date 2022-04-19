@@ -57,21 +57,21 @@ export default function Draw (): JSX.Element {
   console.log(toolbarVisible)
   return (
     <div className='canvas-container'>
-      <ul className='canvas-toolbar' onMouseEnter={hover} onMouseLeave={away} style={{opacity: toolbarOpacity}}>
+      <ul className='canvas-toolbar' onMouseEnter={hover} onMouseLeave={away} style={{ opacity: toolbarOpacity }}>
         <li className='button'>
-          <img src='./assets/icon-pencil.png' onClick={draw} alt='draw'/>
+          <img src='./assets/icon-pencil.png' onClick={draw} alt='draw' />
         </li>
         <li className='button'>
-          <img src='./assets/icon-eraser.png' onClick={erase} alt='erase'/>
+          <img src='./assets/icon-eraser.png' onClick={erase} alt='erase' />
         </li>
         <li className='button'>
-          <img src='./assets/icon-back.png' onClick={undo} alt='undo'/>
+          <img src='./assets/icon-back.png' onClick={undo} alt='undo' />
         </li>
         <li className='button'>
-          <img src='./assets/icon-save.png' onClick={save} alt='save'/>
+          <img src='./assets/icon-save.png' onClick={save} alt='save' />
         </li>
         <li className='button'>
-          <img src='./assets/icon-download.png' onClick={download} alt='download'/>
+          <img src='./assets/icon-download.png' onClick={download} alt='download' />
         </li>
       </ul>
       <CanvasDraw
