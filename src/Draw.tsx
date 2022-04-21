@@ -2,9 +2,13 @@ import { useRef, useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
 import './Draw.scss'
 
+interface ReactCanvasDrawType {
+  current: any
+}
+
 export default function Draw (): JSX.Element {
-  const canvasRef = useRef(null)
-  const urlRef = useRef(null)
+  const canvasRef: ReactCanvasDrawType = useRef(null)
+  const urlRef: ReactCanvasDrawType = useRef(null)
   const [dataUrl, saveData] = useState('')
   const [toolbarVisible, showToolbar] = useState(true)
   const [brushColor, setBrushColor] = useState('#444')
@@ -78,7 +82,7 @@ export default function Draw (): JSX.Element {
     brushColor: brushColor,
     catenaryColor: '#aaa',
     hideGrid: true,
-    style: {cursor: brushStyle}
+    style: { cursor: brushStyle }
   }
 
   return (
@@ -107,7 +111,7 @@ export default function Draw (): JSX.Element {
         {...defaultProps}
       />
       <a ref={urlRef} href={dataUrl} download='malicium-drawing.png'>
-      <i aria-hidden="true"/>
+        <i aria-hidden='true' />
       </a>
     </div>
   )
