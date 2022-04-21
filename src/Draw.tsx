@@ -106,7 +106,6 @@ export default function Draw (): JSX.Element {
       <CanvasDraw
         {...defaultProps}
       />
-      <img src='./assets/icon-refresh.png' style={{position: 'absolute'}}></img>
       <a ref={urlRef} href={dataUrl} download='malicium-drawing.png'>
       <i aria-hidden="true"/>
       </a>
