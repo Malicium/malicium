@@ -6,7 +6,7 @@ export default function Draw (): JSX.Element {
   const canvasRef = useRef(null)
   const urlRef = useRef(null)
   const [dataUrl, saveData] = useState('')
-  const [toolbarVisible, showToolbar] = useState(false)
+  const [toolbarVisible, showToolbar] = useState(true)
   const [brushColor, setBrushColor] = useState('#444')
   const [brushRadius, setBrushRadius] = useState(0.5)
   const [brushStyle, setBrushStyle] = useState('none')
