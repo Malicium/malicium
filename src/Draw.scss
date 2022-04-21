@@ -1,26 +1,24 @@
 @use 'index';
 
 
-.editor-container, .canvas-container {
+.canvas-container {
   width: 100%;
   height: 100%;
   text-align: center;
-}
 
-.editor {
-  background: none;
-  border: none;
-  outline: none;
-  color: index.$bg-color;
-  font-size: 1rem;
+    
+  background: url("../public/assets/note-pad.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
 
-  &::placeholder {
-    color: index.$bg-color;
-    opacity: 0.5;
+  @media screen and(max-width: index.$width-md) {
+    background: url("../public/assets/note-pad-vt.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   @media screen and(min-width: index.$width-xlg) {
-    margin-top: 10em;
+    background-size: contain;
   }
 }
 
@@ -53,35 +51,3 @@
     }
   }
 }
-
-// .editor, .canvas {
-//   width: 65% !important;
-//   height: 80% !important;
-//   margin-top: 3em;
-
-//   @media screen and(min-width: index.$width-xlg) {
-//     margin-top: 9em;
-//     width: 48% !important;
-//     height: 70% !important;
-//   }
-
-//   @media screen and(max-width: index.$width-lg) {
-//     margin-top: 8em;
-//     width: 70% !important;
-//     height: 65% !important;
-//   }
-
-//   @media screen and(max-width: index.$width-md) {
-//     height: 75% !important;
-//   }
-
-//   @media screen and(max-width: index.$width-sm) {
-//     margin-top: 7em;
-//     width: 90% !important;
-//     height: 65% !important;
-//   }
-
-//   // border: 1px dotted #000;
-// }
-
-

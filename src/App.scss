@@ -4,18 +4,5 @@
   width: 100vw;
   height: 100vh;
   margin: auto;
-  
-  background: url("../public/assets/note-pad.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
 
-  @media screen and(max-width: index.$width-md) {
-    background: url("../public/assets/note-pad-vt.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-
-  @media screen and(min-width: index.$width-xlg) {
-    background-size: contain;
-  }
 }
