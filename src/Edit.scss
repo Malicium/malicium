@@ -2,21 +2,36 @@
 
 .editor-container {
   width: 100%;
-  height: 100%;
-  text-align: center;
-
-  
-}
-
-.editor {
+  height: fit-content;
+  text-align: left;
   width: 1080px;
   height: 100%;
+  margin: auto;
   background-color: rgb(0,0,0,0.5);
-  border: none;
-  outline: none;
-  color: #eee;
-  caret-color: #eee;
-  padding: 2em;
-  font-size: 1em;
-  
+  padding: 45px;
+  counter-reset: section;
+  div {
+    width: 100%;
+    line-height: 1.5;
+    &::before {
+      counter-increment: section;
+      content: counter(section);
+      color: rgb(255,255,255,0.5);
+      position: relative;
+      margin-left: -30px;
+      margin-right: 10px;
+      font-size: 12px;
+      opacity: 0.5;
+      text-align: right;
+    }
+    input {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      color: #ddd;
+      caret-color: #ddd;
+      font-size: 14px;
+    }
+  }
 }

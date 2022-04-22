@@ -4,19 +4,31 @@ import { RefType } from './types'
 
 export default function Edit (): JSX.Element {
   const editorRef: RefType = useRef(null)
+  
+  const addLine = (e:any): void => {
+    e.preventDefault()
 
-  const countLines = (): void => {
-    const lines = editorRef.current.value.split(/\n/)
-    console.log(lines.length)
+
+    // check caret position
+
+
+
+    
+    if (e.keyCode === 13) {
+      const inputField = document.createElement('input')
+      inputField.onkeyup = addLine
+      const newLine = document.createElement('div')
+      newLine.appendChild(inputField)
+      editorRef.current.appendChild(newLine)
+      inputField.focus()
+    }
   }
+  
   return (
-    <div className='editor-container'>
-      <textarea
-        className='editor'
-        placeholder='Write something.'
-        ref={editorRef}
-        onChange={countLines}
-      />
+    <div className='editor-container' ref={editorRef}>
+      <div className='editor'>
+        <input onKeyUp={addLine} />
+      </div>
     </div>
   )
 }
