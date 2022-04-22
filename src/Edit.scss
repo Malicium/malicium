@@ -12,7 +12,7 @@
   counter-reset: section;
   div {
     width: 100%;
-    line-height: 1.5;
+    line-height: 1.2;
     &::before {
       counter-increment: section;
       content: counter(section);
@@ -31,7 +31,7 @@
       outline: none;
       color: #ddd;
       caret-color: #ddd;
-      font-size: 14px;
+      font-size: 13px;
     }
   }
 }
