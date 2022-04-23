@@ -1,5 +1,5 @@
 import './App.scss'
-import Draw from './Draw'
+// import Draw from './Draw'
 import Edit from './Edit'
 
 export default function App (): JSX.Element {
