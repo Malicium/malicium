@@ -1,14 +1,11 @@
 import { useRef, useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
 import './Draw.scss'
-
-interface ReactCanvasDrawType {
-  current: any
-}
+import { RefType } from './types'
 
 export default function Draw (): JSX.Element {
-  const canvasRef: ReactCanvasDrawType = useRef(null)
-  const urlRef: ReactCanvasDrawType = useRef(null)
+  const canvasRef: RefType = useRef(null)
+  const urlRef: RefType = useRef(null)
   const [dataUrl, saveData] = useState('')
   const [toolbarVisible, showToolbar] = useState(true)
   const [brushColor, setBrushColor] = useState('#444')
