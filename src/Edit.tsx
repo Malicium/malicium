@@ -25,9 +25,10 @@ export default function Edit (): JSX.Element {
     name: "editor",
     className: "editor",
     // editorProps: {$blockScrolling: true},
-    theme: 'monokai',
+    theme: 'github',
     mode: 'javascript',
-    wrapEnabled:true
+    wrapEnabled:true,
+    placeholder: 'Type something'
   }
   
   return (
