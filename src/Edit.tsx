@@ -1,34 +1,40 @@
-import { useRef } from 'react'
+import AceEditor from "react-ace"
+import ace from 'ace-builds/src-noconflict/ace'
 import './Edit.scss'
-import { RefType } from './types'
+
+import 'brace/mode/javascript';
+import 'brace/mode/plain_text';
+
+import 'brace/theme/monokai';
+import 'brace/theme/textmate';
+import 'brace/theme/github';
+import 'brace/theme/twilight';
+
+import 'brace/snippets/javascript';
+import 'brace/ext/language_tools';
+
+
 
 export default function Edit (): JSX.Element {
-  const editorRef: RefType = useRef(null)
-  
-  const addLine = (e:any): void => {
-    e.preventDefault()
+  ace.config.set('basePath', 'ace-builds/src')
+  const onChange = (value:any) => {
+  }
 
-
-    // check caret position
-
-
-
-    
-    if (e.keyCode === 13) {
-      const inputField = document.createElement('input')
-      inputField.onkeyup = addLine
-      const newLine = document.createElement('div')
-      newLine.appendChild(inputField)
-      editorRef.current.appendChild(newLine)
-      inputField.focus()
-    }
+  const defaultProps = {
+    onChange: onChange,
+    name: "editor",
+    className: "editor",
+    // editorProps: {$blockScrolling: true},
+    theme: 'monokai',
+    mode: 'javascript',
+    wrapEnabled:true
   }
   
   return (
-    <div className='editor-container' ref={editorRef}>
-      <div className='editor'>
-        <input onKeyUp={addLine} />
-      </div>
+    <div className='editor-container'>
+      <AceEditor
+        {...defaultProps}
+      />
     </div>
   )
 }

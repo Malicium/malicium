@@ -1,37 +1,24 @@
 @use 'index';
 
 .editor-container {
-  width: 100%;
   height: fit-content;
   text-align: left;
-  width: 1080px;
+  width: 900px;
   height: 100%;
   margin: auto;
-  background-color: rgb(0,0,0,0.5);
-  padding: 45px;
-  counter-reset: section;
-  div {
-    width: 100%;
-    line-height: 1.2;
-    &::before {
-      counter-increment: section;
-      content: counter(section);
-      color: rgb(255,255,255,0.5);
-      position: relative;
-      margin-left: -30px;
-      margin-right: 10px;
-      font-size: 12px;
-      opacity: 0.5;
-      text-align: right;
-    }
-    input {
-      width: 100%;
-      background: none;
-      border: none;
-      outline: none;
-      color: #ddd;
-      caret-color: #ddd;
-      font-size: 13px;
-    }
+  border: 1px solid #202124;
+
+  .editor {
+    width: 100% !important;
+  }
+
+  .ace_gutter {
+    box-shadow: 1px 1px 2px #eee;
+  }
+  .ace_gutter-cell {
+  }
+
+  .ace_placeholder {
+    padding: 0;
   }
 }
