@@ -2,16 +2,9 @@ import AceEditor from 'react-ace'
 import ace from 'ace-builds/src-noconflict/ace'
 import './Edit.scss'
 
-import 'brace/mode/javascript'
-import 'brace/mode/plain_text'
+import './lib/modes'
+import './lib/themes'
 
-import 'brace/theme/monokai'
-import 'brace/theme/textmate'
-import 'brace/theme/github'
-import 'brace/theme/twilight'
-
-import 'brace/snippets/javascript'
-import 'brace/ext/language_tools'
 
 export default function Edit (): JSX.Element {
   ace.config.set('basePath', 'ace-builds/src')
@@ -23,11 +16,11 @@ export default function Edit (): JSX.Element {
     onChange: onChange,
     name: 'editor',
     className: 'editor',
-    // editorProps: {$blockScrolling: true},
-    theme: 'github',
+    theme: 'monokai',
     mode: 'javascript',
+    fontSize: 16,
     wrapEnabled: true,
-    placeholder: 'Type something'
+    placeholder: 'Type something',
   }
 
   return (
