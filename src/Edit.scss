@@ -7,6 +7,16 @@
   margin: auto;
   border: 1px solid #202124;
 
+  .editor-toolbar {
+    background-color: #eee;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
   .editor {
     width: 100% !important;
     height: 100% !important;
