@@ -1,13 +1,18 @@
 import AceEditor from 'react-ace'
 import ace from 'ace-builds/src-noconflict/ace'
-import './Edit.scss'
-import './Draw.scss'
+
+
 
 import './lib/modes'
 import { modelist } from './lib/modes'
 
 import './lib/themes'
 import { themelist } from './lib/themes'
+
+import Toolbar from './components/Toolbar'
+
+import './Edit.scss'
+import './Draw.scss'
 
 
 export default function Edit (): JSX.Element {
@@ -30,9 +35,10 @@ export default function Edit (): JSX.Element {
     console.log(e.target.value)
   }
 
+
   return (
     <div className='editor-container'>
-      <ul className='editor-toolbar'>
+      {/* <ul className='editor-toolbar'>
         <li className='button'>
           <select onChange={switchTheme}>
             {themelist.map((theme) => (
@@ -41,7 +47,10 @@ export default function Edit (): JSX.Element {
           </select>
         </li>
 
-      </ul>
+      </ul> */}
+      <Toolbar
+        themes={themelist}
+      />
       <AceEditor
         {...defaultProps}
       />
