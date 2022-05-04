@@ -1,4 +1,4 @@
-@use 'index';
+@use '../index';
 
 
 .canvas-container {
@@ -8,12 +8,12 @@
   touch-action: none;
 
     
-  background: url("../public/assets/note-pad.jpg") no-repeat;
+  background: url("../../public/assets/note-pad.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 
   @media screen and(max-width: index.$width-md) {
-    background: url("../public/assets/note-pad-vt.jpg") no-repeat;
+    background: url("../../public/assets/note-pad-vt.jpg") no-repeat;
     background-size: cover;
     background-position: center;
   }

@@ -1,7 +1,11 @@
 import { useRef, useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
 import './Draw.scss'
-import { RefType } from './types'
+
+interface RefType {
+  current: any
+  appendChild?: any
+}
 
 export default function Draw (): JSX.Element {
   const canvasRef: RefType = useRef(null)

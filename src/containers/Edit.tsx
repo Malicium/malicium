@@ -1,27 +1,19 @@
 import AceEditor from 'react-ace'
 import ace from 'ace-builds/src-noconflict/ace'
 
+import { modelist } from '../lib/modes'
 
+import { themelist } from '../lib/themes'
 
-import './lib/modes'
-import { modelist } from './lib/modes'
-
-import './lib/themes'
-import { themelist } from './lib/themes'
-
-import Toolbar from './components/Toolbar'
+import Toolbar from '../components/Toolbar'
 
 import './Edit.scss'
 import './Draw.scss'
 import { useState } from 'react'
 
-
 export default function Edit (): JSX.Element {
   ace.config.set('basePath', 'ace-builds/src')
-
   const [theme, setTheme] = useState('github')
-
-
 
   const defaultProps = {
     name: 'editor',
@@ -32,7 +24,7 @@ export default function Edit (): JSX.Element {
     wrapEnabled: true,
     placeholder: 'Type something',
     width: '100%',
-    height: '100%',
+    height: '100%'
   }
 
   return (
