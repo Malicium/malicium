@@ -3,12 +3,15 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
+import './Toolbar.scss'
+
 type ThemeType = { 
   [key:string]: string
 }
 
 type PropType = {
   themes: ThemeType[]
+  setTheme: Function
 }
 
 export default function Toolbar (props:PropType): JSX.Element {
@@ -16,23 +19,25 @@ export default function Toolbar (props:PropType): JSX.Element {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(e.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (e: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(null);
+    props.setTheme(e.currentTarget.id)
   };
   
   return (
-    <div>
+    <div className='toolbar'>
       <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        className="toolbar-item"
       >
-        Dashboard
+        Themes
       </Button>
       <Menu
         id="basic-menu"
@@ -44,7 +49,14 @@ export default function Toolbar (props:PropType): JSX.Element {
         }}
       >
         {themes.map((theme:ThemeType) => 
-          <MenuItem onClick={handleClose}>{theme.name}</MenuItem>
+          <MenuItem
+            key={theme.path}
+            onClick={handleClose}
+            className="toolbar-item__dropdown"
+            id={theme.name}
+            >
+            {theme.name}
+          </MenuItem>
         )}
       </Menu>
     </div>

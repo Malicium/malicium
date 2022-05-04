@@ -13,43 +13,33 @@ import Toolbar from './components/Toolbar'
 
 import './Edit.scss'
 import './Draw.scss'
+import { useState } from 'react'
 
 
 export default function Edit (): JSX.Element {
   ace.config.set('basePath', 'ace-builds/src')
-  const onChange = (value: string): void => {
-    console.log(value)
-  }
+
+  const [theme, setTheme] = useState('github')
+
+
+
   const defaultProps = {
-    onChange: onChange,
     name: 'editor',
     className: 'editor',
-    theme: 'monokai',
+    theme: theme,
     mode: 'javascript',
     fontSize: 14,
     wrapEnabled: true,
-    placeholder: 'Type something'
+    placeholder: 'Type something',
+    width: '100%',
+    height: '100%',
   }
-
-  const switchTheme = (e:any) => {
-    console.log(e.target.value)
-  }
-
 
   return (
     <div className='editor-container'>
-      {/* <ul className='editor-toolbar'>
-        <li className='button'>
-          <select onChange={switchTheme}>
-            {themelist.map((theme) => (
-              <option key={theme.url} value={theme.name}>{theme.name}</option>
-            ))}
-          </select>
-        </li>
-
-      </ul> */}
       <Toolbar
         themes={themelist}
+        setTheme={setTheme}
       />
       <AceEditor
         {...defaultProps}
