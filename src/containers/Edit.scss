@@ -3,12 +3,17 @@
 .editor-container {
   text-align: left;
   width: 900px;
-  height: 100%;
+  height: 90%;
   margin: auto;
+
+  .editor-menu {
+    display: flex;
+  }
 
   .editor {
     padding: 1em !important;
     box-shadow: 10px 10px 20px gray;
+    line-height: 1.8;
 
     .ace_placeholder {
       padding: 0 !important;

@@ -3,20 +3,22 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 
-import './Toolbar.scss'
+import './Select.scss'
 
-interface ThemeType {
+interface OptionType {
   [key: string]: string
 }
 
 interface PropType {
-  themes: ThemeType[]
-  setTheme: Function
+  name: string
+  options: OptionType[]
+  selectOption: Function
 }
 
-export default function Toolbar (props: PropType): JSX.Element {
-  const { themes } = props
+export default function Select (props: PropType): JSX.Element {
+  const { options, name } = props
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const [selected, selectOption] = useState(name)
   const open = Boolean(anchorEl)
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -24,11 +26,13 @@ export default function Toolbar (props: PropType): JSX.Element {
   }
   const handleClose = (e: React.MouseEvent<HTMLElement>): void => {
     setAnchorEl(null)
-    props.setTheme(e.currentTarget.id)
+    const option:string = e.currentTarget.id
+    props.selectOption(option)
+    selectOption(option)
   }
 
   return (
-    <div className='toolbar'>
+    <div className='option'>
       <Button
         id='basic-button'
         aria-controls={open ? 'basic-menu' : undefined}
@@ -37,7 +41,7 @@ export default function Toolbar (props: PropType): JSX.Element {
         onClick={handleClick}
         className='toolbar-item'
       >
-        Themes
+        {name}
       </Button>
       <Menu
         id='basic-menu'
@@ -48,14 +52,13 @@ export default function Toolbar (props: PropType): JSX.Element {
           'aria-labelledby': 'basic-button'
         }}
       >
-        {themes.map((theme: ThemeType) =>
+        {options.map((option: OptionType) =>
           <MenuItem
-            key={theme.path}
+            key={option.path}
             onClick={handleClose}
-            className='toolbar-item__dropdown'
-            id={theme.name}
+            id={option.name}
           >
-            {theme.name}
+            {option.name}
           </MenuItem>
         )}
       </Menu>
