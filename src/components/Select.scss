@@ -1,11 +1,30 @@
 @use '../index';
 
-.select {
-  &:hover {
-    background-color: #fff;
+.select-group {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  margin: 0;
+  background-color: #eee;
+  
+  .select {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: .5em;
+    &:hover {
+      background-color: #fff;
+    }
+  
+    .button {
+      width: fit-content;
+      cursor: pointer;
+    }
+    img {
+      width: 40px;
+    }
   }
 }
-
 
 .MuiButton-root {
   text-transform: none !important;

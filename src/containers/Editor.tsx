@@ -2,7 +2,6 @@ import AceEditor from 'react-ace'
 import ace from 'ace-builds/src-noconflict/ace'
 
 import { modelist } from '../lib/modes'
-import '../lib/modes'
 import { themelist } from '../lib/themes'
 
 import Select from '../components/Select'
@@ -15,7 +14,7 @@ export default function Edit (): JSX.Element {
   ace.config.set('basePath', 'ace-builds/src')
   const [theme, setTheme] = useState('github')
   const [mode, setMode] = useState('javascript')
-  console.log(mode)
+
   const defaultProps = {
     name: 'editor',
     className: 'editor',

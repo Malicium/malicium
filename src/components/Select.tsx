@@ -12,13 +12,11 @@ interface PropType {
   name: string
   options: OptionType[]
   selectOption: Function,
-  children?: any
 }
 
 export default function Select (props: PropType): JSX.Element {
   const { options, name } = props
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const [selected, selectOption] = useState(name)
   const open = Boolean(anchorEl)
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -28,12 +26,10 @@ export default function Select (props: PropType): JSX.Element {
     setAnchorEl(null)
     const option:string = e.currentTarget.id
     props.selectOption(option)
-    selectOption(option)
   }
 
   return (
     <div className='select'>
-      {props.children}
       <Menu
         id='basic-menu'
         anchorEl={anchorEl}
