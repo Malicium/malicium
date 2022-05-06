@@ -1,5 +1,11 @@
 @use '../index';
 
+.select {
+  &:hover {
+    background-color: #fff;
+  }
+}
+
 
 .MuiButton-root {
   text-transform: none !important;
@@ -15,4 +21,3 @@
     font-size: 12px !important;
   }
 }
-

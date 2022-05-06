@@ -16,9 +16,15 @@ export default function SelectGroup (props: PropType): JSX.Element {
         <img src='./assets/icon-pencil.png' alt='draw' />
       </Select>
     </li>
-        {/* <li className='button'>
-          <img src='./assets/icon-eraser.png' onClick={erase} alt='erase' />
-        </li>
+    <li className='button'>
+      <Select
+        name="erase"
+        options={[{name: 'erase', path: ''}]}
+        selectOption={props.func}>
+        <img src='./assets/icon-eraser.png' alt='draw' />
+      </Select>
+    </li>
+        {/* 
         <li className='button'>
           <img src='./assets/icon-back.png' onClick={undo} alt='undo' />
         </li>
