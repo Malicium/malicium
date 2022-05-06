@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 
@@ -12,7 +11,8 @@ interface OptionType {
 interface PropType {
   name: string
   options: OptionType[]
-  selectOption: Function
+  selectOption: Function,
+  children?: any
 }
 
 export default function Select (props: PropType): JSX.Element {
@@ -32,17 +32,8 @@ export default function Select (props: PropType): JSX.Element {
   }
 
   return (
-    <div className='option'>
-      <Button
-        id='basic-button'
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup='true'
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        className='toolbar-item'
-      >
-        {name}
-      </Button>
+    <div className='select'>
+      {props.children}
       <Menu
         id='basic-menu'
         anchorEl={anchorEl}

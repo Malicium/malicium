@@ -2,12 +2,13 @@
 
 .editor-container {
   text-align: left;
-  width: 900px;
+  width: 80%;
   height: 90%;
   margin: auto;
 
   .editor-menu {
     display: flex;
+    background-color: #eee;
   }
 
   .editor {

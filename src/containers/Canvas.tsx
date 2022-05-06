@@ -1,13 +1,15 @@
 import { useRef, useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
-import './Draw.scss'
+import SelectGroup from '../components/SelectGroup'
+import Button from '@mui/material/Button'
+import './Canvas.scss'
 
 interface RefType {
   current: any
   appendChild?: any
 }
 
-export default function Draw (): JSX.Element {
+export default function Canvas (): JSX.Element {
   const canvasRef: RefType = useRef(null)
   const urlRef: RefType = useRef(null)
   const [dataUrl, saveData] = useState('')
@@ -79,33 +81,15 @@ export default function Draw (): JSX.Element {
 
   return (
     <div className='canvas-container'>
-      
-      <ul className='canvas-toolbar'>
-        <li className='button'>
-          <img src='./assets/icon-pencil.png' onClick={draw} alt='draw' />
-        </li>
-        <li className='button'>
-          <img src='./assets/icon-eraser.png' onClick={erase} alt='erase' />
-        </li>
-        <li className='button'>
-          <img src='./assets/icon-back.png' onClick={undo} alt='undo' />
-        </li>
-        <li className='button'>
-          <img src='./assets/icon-refresh.png' onClick={refresh} alt='refresh' />
-        </li>
-        <li className='button'>
-          <img src='./assets/icon-save.png' onClick={save} alt='save' />
-        </li>
-        <li className='button'>
-          <img src='./assets/icon-download.png' onClick={download} alt='download' />
-        </li>
-      </ul>
-      <CanvasDraw
-        {...defaultProps}
-      />
-      <a ref={urlRef} href={dataUrl} download='malicium-drawing.png'>
-        <i aria-hidden='true' />
-      </a>
+    <SelectGroup 
+      func={draw}
+    />
+    <CanvasDraw
+      {...defaultProps}
+    />
+    <a ref={urlRef} href={dataUrl} download='malicium-drawing.png'>
+      <i aria-hidden='true' />
+    </a>
     </div>
   )
 }

@@ -8,23 +8,6 @@
   text-align: center;
   touch-action: none;
 
-  .canvas-toolbar {
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-    margin: 0;
-    padding: .2em;
-    background-color: #eee;
-  
-    .button {
-      width: fit-content;
-      cursor: pointer;
-      img {
-        width: 40px;
-      }
-    }
-  }
-
   .canvas {
     width: 100% !important;
     height: 90% !important;
