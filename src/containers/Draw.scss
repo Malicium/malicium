@@ -1,54 +1,38 @@
 @use '../index';
 
-
 .canvas-container {
-  width: 100%;
+  text-align: left;
+  width: 80%;
   height: 100%;
+  margin: auto;
   text-align: center;
   touch-action: none;
 
-    
-  background: url("../../public/assets/note-pad.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  @media screen and(max-width: index.$width-md) {
-    background: url("../../public/assets/note-pad-vt.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-
-  @media screen and(min-width: index.$width-xlg) {
-    background-size: contain;
-  }
-}
-
-.canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.canvas-toolbar {
-  background-color: #eee;
-  opacity: 0;
-  height: 60px;
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  .button {
-    width: 40px;
-    cursor: pointer;
-    &:hover {
-      background-color: #fff;
-      box-shadow: 20px 20px 50px grey;
-      border-radius: 5px;
+  .canvas-toolbar {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: .2em;
+    background-color: #eee;
+  
+    .button {
+      width: fit-content;
+      cursor: pointer;
+      img {
+        width: 40px;
+      }
     }
-    padding: 10px;
-    img {
-      width: 100%;
+  }
+
+  .canvas {
+    width: 100% !important;
+    height: 90% !important;
+    box-shadow: 10px 20px 50px;
+    background-color: #eee !important;
+    margin: auto;
+    .ace_placeholder {
+      padding: 0 !important;
     }
   }
 }

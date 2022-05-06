@@ -64,15 +64,6 @@ export default function Draw (): JSX.Element {
     setBrushStyle('grab')
   }
 
-  const mouseHover = (): void => {
-    showToolbar(true)
-  }
-
-  const mouseAway = (): void => {
-    showToolbar(false)
-  }
-
-  const toolbarOpacity = toolbarVisible ? 0.5 : 0
   const defaultProps = {
     className: 'canvas',
     ref: canvasRef,
@@ -88,7 +79,8 @@ export default function Draw (): JSX.Element {
 
   return (
     <div className='canvas-container'>
-      <ul className='canvas-toolbar' onMouseEnter={mouseHover} onMouseLeave={mouseAway} style={{ opacity: toolbarOpacity }}>
+      
+      <ul className='canvas-toolbar'>
         <li className='button'>
           <img src='./assets/icon-pencil.png' onClick={draw} alt='draw' />
         </li>
