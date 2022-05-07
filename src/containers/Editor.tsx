@@ -10,11 +10,11 @@ import './Editor.scss'
 import './Canvas.scss'
 import { useState } from 'react'
 
-type PropType = {
-  visible: boolean | undefined
+interface PropType {
+  visible: boolean
 }
 
-export default function Edit (props:PropType): JSX.Element {
+export default function Edit (props: PropType): JSX.Element {
   ace.config.set('basePath', 'ace-builds/src')
   const [theme, setTheme] = useState('github')
   const [mode, setMode] = useState('javascript')
@@ -39,7 +39,7 @@ export default function Edit (props:PropType): JSX.Element {
         theme={theme}
         mode={mode}
         fontSize={14}
-        wrapEnabled={true}
+        wrapEnabled
         placeholder='Type something'
         width='100%'
         height='100%'

@@ -2,15 +2,15 @@ import { useRef, useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
 import './Canvas.scss'
 
-type RefType = {
+interface RefType {
   current: any
 }
 
-type PropType = {
-  visible: boolean | undefined,
+interface PropType {
+  visible: boolean
 }
 
-export default function Canvas (props:PropType): JSX.Element {
+export default function Canvas (props: PropType): JSX.Element {
   const canvasRef: RefType = useRef(null)
   const urlRef: RefType = useRef(null)
   const [dataUrl, saveData] = useState('')

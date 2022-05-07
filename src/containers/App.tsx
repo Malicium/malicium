@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Switch from '@mui/material/Switch';
+import Switch from '@mui/material/Switch'
 import Canvas from './Canvas'
 import Editor from './Editor'
 
@@ -9,7 +9,7 @@ export default function App (): JSX.Element {
   const [typing, edit] = useState(false)
   const [drawing, draw] = useState(true)
 
-  const setMode = ():void => {
+  const setMode = (): void => {
     edit(!typing)
     draw(!drawing)
   }
@@ -17,12 +17,12 @@ export default function App (): JSX.Element {
   return (
     <div className='App'>
       <Switch
-        color="default"
-        size="small" 
+        color='default'
+        size='small'
         onChange={setMode}
       />
       <Editor visible={typing} />
-      <Canvas visible={drawing}/>
+      <Canvas visible={drawing} />
     </div>
   )
 }
