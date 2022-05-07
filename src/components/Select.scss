@@ -28,10 +28,9 @@
 
 .MuiButton-root {
   text-transform: none !important;
-  // border: 1px solid !important;
   font-size: 12px !important;
   font-weight: 800 !important;
-  color: white !important;
+  color: #000 !important;
 }
 
 .MuiPaper-root {
@@ -39,4 +38,9 @@
   * {
     font-size: 12px !important;
   }
+}
+
+.MuiButton-root {
+  margin: .5em !important;
+  height: fit-content;
 }

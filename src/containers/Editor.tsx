@@ -6,7 +6,7 @@ import { themelist } from '../lib/themes'
 
 import Select from '../components/Select'
 
-import './Edit.scss'
+import './Editor.scss'
 import './Canvas.scss'
 import { useState } from 'react'
 
