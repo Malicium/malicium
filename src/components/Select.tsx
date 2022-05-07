@@ -32,7 +32,7 @@ export default function Select (props: PropType): JSX.Element {
   }
 
   return (
-    <div className='option'>
+    <div className='select'>
       <Button
         id='basic-button'
         aria-controls={open ? 'basic-menu' : undefined}
@@ -41,7 +41,7 @@ export default function Select (props: PropType): JSX.Element {
         onClick={handleClick}
         className='toolbar-item'
       >
-        {name}
+        {selected}
       </Button>
       <Menu
         id='basic-menu'

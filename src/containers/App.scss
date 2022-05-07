@@ -3,5 +3,8 @@
 .App {
   width: 100vw;
   height: 100vh;
-  margin: auto;
+  padding: 1em;
+  background: url("../../public/assets/bg-horizontal.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
 }

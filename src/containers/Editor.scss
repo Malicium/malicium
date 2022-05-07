@@ -1,0 +1,22 @@
+@use '../index';
+
+.editor-container {
+  text-align: left;
+  width: 80%;
+  height: 90%;
+  margin: auto;
+
+  .editor-menu {
+    display: flex;
+    background-color: #eee;
+  }
+
+  .editor {
+    box-shadow: 10px 10px 20px gray;
+    line-height: 1.8;
+
+    .ace_placeholder {
+      padding: 0 !important;
+    }
+  }
+}

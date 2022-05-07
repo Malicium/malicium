@@ -1,0 +1,42 @@
+@use '../index';
+
+.canvas-container {
+  text-align: left;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  touch-action: none;
+
+  .button-group {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    list-style: none;
+    background-color: #fff;
+    
+  
+    .button {
+      width: fit-content;
+      cursor: pointer;
+      padding: .5em;
+      &:hover {
+        background-color: #eee;
+      }
+      img {
+        width: 40px;
+      }
+    }
+  }
+
+  .canvas {
+    width: 100% !important;
+    height: 90% !important;
+    box-shadow: 10px 20px 50px;
+    background-color: #fff !important;
+    margin: auto;
+    .ace_placeholder {
+      padding: 0 !important;
+    }
+  }
+}
