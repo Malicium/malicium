@@ -33,15 +33,15 @@ export default function Edit (): JSX.Element {
         <Select
           options={themelist}
           selectOption={setTheme}
-          name="Theme"
+          name='Theme'
         />
         <Select
           options={modelist}
           selectOption={setMode}
-          name="Mode"
+          name='Mode'
         />
       </div>
-      
+
       <AceEditor
         {...defaultProps}
       />

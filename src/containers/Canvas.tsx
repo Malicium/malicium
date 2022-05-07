@@ -11,7 +11,6 @@ export default function Canvas (): JSX.Element {
   const canvasRef: RefType = useRef(null)
   const urlRef: RefType = useRef(null)
   const [dataUrl, saveData] = useState('')
-  const [toolbarVisible, showToolbar] = useState(true)
   const [brushColor, setBrushColor] = useState('#444')
   const [brushRadius, setBrushRadius] = useState(0.5)
   const [brushStyle, setBrushStyle] = useState('none')

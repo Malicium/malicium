@@ -26,7 +26,7 @@ export default function Select (props: PropType): JSX.Element {
   }
   const handleClose = (e: React.MouseEvent<HTMLElement>): void => {
     setAnchorEl(null)
-    const option:string = e.currentTarget.id
+    const option: string = e.currentTarget.id
     props.selectOption(option)
     selectOption(option)
   }
