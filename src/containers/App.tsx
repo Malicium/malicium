@@ -1,12 +1,12 @@
 import './App.scss'
-import Draw from './Canvas'
-import Edit from './Editor'
+import Canvas from './Canvas'
+import Editor from './Editor'
 
 export default function App (): JSX.Element {
   return (
     <div className='App'>
-      {/* <Edit /> */}
-      <Draw />
+      {/* <Editor /> */}
+      <Canvas />
     </div>
   )
 }
