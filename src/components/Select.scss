@@ -12,9 +12,7 @@
     justify-content: space-evenly;
     margin: 0;
     padding: .5em;
-    &:hover {
-      background-color: #fff;
-    }
+    color: #000 !important;
   
     .button {
       width: fit-content;
@@ -27,19 +25,17 @@
 }
 
 .MuiButton-root {
-  text-transform: none !important;
+  text-transform: capitalize !important;
   font-size: 12px !important;
   color: #000 !important;
+  margin: .5em !important;
+  height: fit-content;
 }
 
 .MuiPaper-root {
+  text-transform: capitalize;
   margin-top: 3.5em;
   * {
     font-size: 12px !important;
   }
-}
-
-.MuiButton-root {
-  margin: .5em !important;
-  height: fit-content;
 }
