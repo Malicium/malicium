@@ -2,12 +2,15 @@ import { useRef, useState } from 'react'
 import CanvasDraw from 'react-canvas-draw'
 import './Canvas.scss'
 
-interface RefType {
+type RefType = {
   current: any
-  appendChild?: any
 }
 
-export default function Canvas (): JSX.Element {
+type PropType = {
+  visible: boolean | undefined,
+}
+
+export default function Canvas (props:PropType): JSX.Element {
   const canvasRef: RefType = useRef(null)
   const urlRef: RefType = useRef(null)
   const [dataUrl, saveData] = useState('')
@@ -77,7 +80,7 @@ export default function Canvas (): JSX.Element {
   }
 
   return (
-    <div className='canvas-container'>
+    <div className='canvas-container' hidden={!props.visible}>
       <ul className='button-group'>
         <li className='button'>
           <img src='./assets/icon-pencil.png' onClick={draw} alt='draw' />

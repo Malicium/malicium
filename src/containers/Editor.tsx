@@ -10,25 +10,17 @@ import './Editor.scss'
 import './Canvas.scss'
 import { useState } from 'react'
 
-export default function Edit (): JSX.Element {
+type PropType = {
+  visible: boolean | undefined
+}
+
+export default function Edit (props:PropType): JSX.Element {
   ace.config.set('basePath', 'ace-builds/src')
   const [theme, setTheme] = useState('github')
   const [mode, setMode] = useState('javascript')
 
-  const defaultProps = {
-    name: 'editor',
-    className: 'editor',
-    theme: theme,
-    mode: mode,
-    fontSize: 14,
-    wrapEnabled: true,
-    placeholder: 'Type something',
-    width: '100%',
-    height: '100%'
-  }
-
   return (
-    <div className='editor-container'>
+    <div className='editor-container' hidden={!props.visible}>
       <div className='editor-menu'>
         <Select
           options={themelist}
@@ -41,9 +33,16 @@ export default function Edit (): JSX.Element {
           name='Mode'
         />
       </div>
-
       <AceEditor
-        {...defaultProps}
+        name='editor'
+        className='editor'
+        theme={theme}
+        mode={mode}
+        fontSize={14}
+        wrapEnabled={true}
+        placeholder='Type something'
+        width='100%'
+        height='100%'
       />
     </div>
   )
