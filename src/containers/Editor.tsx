@@ -14,13 +14,16 @@ interface PropType {
   visible: boolean
 }
 
-export default function Edit (props: PropType): JSX.Element {
+export default function Edit (props: PropType): JSX.Element | null {
   ace.config.set('basePath', 'ace-builds/src')
   const [theme, setTheme] = useState('github')
   const [mode, setMode] = useState('javascript')
 
+  if (!props.visible) {
+    return null
+  }
   return (
-    <div className='editor-container' hidden={!props.visible}>
+    <div className='editor-container'>
       <div className='editor-menu'>
         <Select
           options={themelist}
