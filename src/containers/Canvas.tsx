@@ -10,7 +10,7 @@ interface PropType {
   visible: boolean
 }
 
-export default function Canvas (props: PropType): JSX.Element {
+export default function Canvas (props: PropType): JSX.Element | null {
   const canvasRef: RefType = useRef(null)
   const urlRef: RefType = useRef(null)
   const [dataUrl, saveData] = useState('')
@@ -66,21 +66,12 @@ export default function Canvas (props: PropType): JSX.Element {
     setBrushStyle('grab')
   }
 
-  const defaultProps = {
-    className: 'canvas',
-    ref: canvasRef,
-    backgroundColor: 'transparent',
-    loadTimeOffset: 1,
-    lazyRadius: 0,
-    brushRadius: brushRadius,
-    brushColor: brushColor,
-    catenaryColor: '#aaa',
-    hideGrid: true,
-    style: { cursor: brushStyle }
+  if (!props.visible) {
+    return null
   }
 
   return (
-    <div className='canvas-container' hidden={!props.visible}>
+    <div className='canvas-container'>
       <ul className='button-group'>
         <li className='button'>
           <img src='./assets/icon-pencil.png' onClick={draw} alt='draw' />
@@ -102,7 +93,15 @@ export default function Canvas (props: PropType): JSX.Element {
         </li>
       </ul>
       <CanvasDraw
-        {...defaultProps}
+        hideGrid
+        className='canvas'
+        ref={canvasRef}
+        backgroundColor='transparent'
+        lazyRadius={0}
+        brushRadius={brushRadius}
+        brushColor={brushColor}
+        catenaryColor='#aaa'
+        style={{ cursor: brushStyle }}
       />
       <a ref={urlRef} href={dataUrl} download='malicium-drawing.png'>
         <i aria-hidden='true' />
